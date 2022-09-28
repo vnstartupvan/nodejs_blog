@@ -4,7 +4,10 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const app = express();
 const port = 3001;
-const route = require('./routes')
+const route = require('./routes');
+const db = require('./config/db');
+//connect to DB
+db.connect();
 app.use(express.static(path.join(__dirname, 'public')));
 //HTTPS Logger
 // app.use(morgan('combined'));
