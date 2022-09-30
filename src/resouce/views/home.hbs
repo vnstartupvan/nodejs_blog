@@ -2,7 +2,8 @@
 {{#each courses}}
 <div class="courses-list d-flex d-inline-flex m-2">
     <div class="card" style="width: 18rem;">
-        <img src="{{this.img}}" class="card-img-top" alt="...">
+        <a href="/courses/{{this.slug}}">
+            <img src="{{this.img}}" class="card-img-top" alt="..."></a>
         <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
             <p class="card-text" {{this.price}}</p>

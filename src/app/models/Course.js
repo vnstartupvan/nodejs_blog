@@ -7,6 +7,7 @@ const Course = new Schema({
     name: { type: String, default: '' },
     price: { type: String, default: '' },
     img: { type: String, default: '' },
+    slug: { type: String, maxLength: 255 },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });
