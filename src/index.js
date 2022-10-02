@@ -11,7 +11,7 @@ db.connect();
 app.use(express.static(path.join(__dirname, 'public')));
 //HTTPS Logger
 // app.use(morgan('combined'));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //Template engine
 app.engine('hbs', handlebars.engine({ extname: '.hbs' }));
