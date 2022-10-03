@@ -1,0 +1,27 @@
+<h1>admin</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Course</th>
+            <th scope="col">Price</th>
+            <th scope="col">Create at</th>
+            <th scope="col">Update at</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>{{this.updatedAt}}</td>
+            <td>
+                <a href="/courses/{{this._id}}/edit">Edit</a>
+                <a href="/courses/{{this._id}}/delete">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

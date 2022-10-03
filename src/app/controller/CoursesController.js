@@ -23,6 +23,23 @@ class CoursesController {
             .then(() => res.redirect('/'))
         res.json(course)
     }
+    //[GET] 
+    edit(req, res, next) {
+        Course.findById(req.params.id)
+            .then(course => {
+                console.log({ course: mongooseObj(course) })
+                res.render('edit', { course: mongooseObj(course) })
+            })
+            .catch(next);
+    }
+    //[PUT]
+    update(req, res, next) {
+        Course.updateOne({ id: req.params.id }, req.body)
+            .then(() => {
+                res.redirect('/courses/admin')
+            })
+            .catch(next);
+    }
 }
 
 module.exports = new CoursesController;
