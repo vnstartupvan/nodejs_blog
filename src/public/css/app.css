@@ -1,0 +1,13 @@
+.card {
+  background-color: #3f167c;
+  border: none;
+  text-align: left; }
+  .card a {
+    border-radius: 10px;
+    overflow: hidden; }
+  .card .card-body {
+    padding-left: 0; }
+    .card .card-body .card-title {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700; }

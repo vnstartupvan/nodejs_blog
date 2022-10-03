@@ -1,1 +1,23 @@
 @import 'variables';
+
+.card {
+    background-color: #3f167c;
+    border: none;
+    text-align: left;
+
+    a {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-body {
+        padding-left: 0;
+
+        .card-title {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+}

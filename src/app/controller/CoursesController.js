@@ -6,7 +6,6 @@ class CoursesController {
     show(req, res, next) {
         Course.findOne({ slug: req.params.slug })
             .then(course => {
-                console.log(mongooseObj(course), req.params.slug)
                 res.render('course', { course: mongooseObj(course) });
             })
             .catch(next)
@@ -21,22 +20,30 @@ class CoursesController {
         course.img = `https://img.youtube.com/vi/${req.body.video}/0.jpg`;
         course.save()
             .then(() => res.redirect('/'))
-        res.json(course)
+            .catch(next);
     }
     //[GET] 
     edit(req, res, next) {
         Course.findById(req.params.id)
             .then(course => {
-                console.log({ course: mongooseObj(course) })
                 res.render('edit', { course: mongooseObj(course) })
             })
             .catch(next);
     }
     //[PUT]
     update(req, res, next) {
-        Course.updateOne({ id: req.params.id }, req.body)
+        Course.updateOne({ _id: req.params.id }, req.body)
             .then(() => {
                 res.redirect('/courses/admin')
+            })
+            .catch(next);
+    }
+    //[PATCH]
+    destroy(req, res, next) {
+        Course.deleteOne({ _id: req.params.id })
+            .then(() => {
+                console.log(req.params.id)
+                res.redirect('back')
             })
             .catch(next);
     }

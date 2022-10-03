@@ -6,7 +6,6 @@ class AdminController {
     index(req, res, next) {
         Course.find({})
             .then(courses => {
-                console.log(courses)
                 courses = multipleMongooseObj(courses);
                 res.render('admin', { courses });
             })
